@@ -2,45 +2,22 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import PropTypes from "prop-types";
 
-import { MAIN_SCREENS_ARRAY } from "../utils/screens";
-import MenuIcon from "../components/common/MenuIcon";
+import { BOTTOM_TAB_SCREENS } from "../utils/screens";
+import HomeScreen from "../screens/HomeScreen";
+
 import SideMenu from "./SideMenu";
 
-import { COLOR_PALETTE } from "../utils/constants";
-
 const Tab = createBottomTabNavigator();
-
-const BOTTOM_TAB_BAR_OPTIONS = {
-	tabBarStyle: {
-		backgroundColor: COLOR_PALETTE.gray_100,
-		justifyContent: "center",
-		alignItems: "center",
-		paddingTop: "4%",
-		height: "12%"
-	}
-};
 
 const BottomTabNavigation = () => (
 	<Tab.Navigator
 		drawerContent={(props) => <SideMenu {...props} />}
-		screenOptions={({ navigation }) => ({
+		screenOptions={() => ({
 			drawerPosition: "right",
-			headerLeft: false,
-			headerRight: ({ color }) => (
-				<MenuIcon color={color} size={32} navigation={navigation} />
-			)
-		})}>
-		{MAIN_SCREENS_ARRAY.map((item, index) => (
-			<Tab.Screen
-				key={index}
-				name={item.name}
-				options={({ route }) => ({
-					...item.options,
-					...BOTTOM_TAB_BAR_OPTIONS
-				})}>
-				{item.component}
-			</Tab.Screen>
-		))}
+			headerLeft: false
+		})}
+	>
+		<Tab.Screen name={BOTTOM_TAB_SCREENS.HOME_SCREEN} component={HomeScreen} />
 	</Tab.Navigator>
 );
 
