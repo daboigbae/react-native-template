@@ -5,18 +5,14 @@ import PropTypes from "prop-types";
 import { BOTTOM_TAB_SCREENS } from "../utils/screens";
 import HomeScreen from "../screens/HomeScreen";
 
-import SideMenu from "./SideMenu";
-
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigation = () => (
 	<Tab.Navigator
-		drawerContent={(props) => <SideMenu {...props} />}
 		screenOptions={() => ({
 			drawerPosition: "right",
 			headerLeft: false
-		})}
-	>
+		})}>
 		<Tab.Screen name={BOTTOM_TAB_SCREENS.HOME_SCREEN} component={HomeScreen} />
 	</Tab.Navigator>
 );
