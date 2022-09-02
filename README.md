@@ -11,11 +11,8 @@ Run this command to create a new react-native project using the template
 ##### iOS
 Take the following steps to run the application locally for iOS
 1. run `yarn install`
-2. navigate to the iOS folder using a terminal `cd ios` 
-3. run `pod install`
-4. run `yarn start` within the directory in a terminal
-5. open the `temp.xworspace` using xcode
-6. run the project using xcode once everything loads
+2. navigate to the iOS folder using a terminal `cd ios && pod install` 
+3. run `yarn ios` at root
 
 ##### Android 
 Take the following steps to run the application locally for iOS
