@@ -1,5 +1,5 @@
-![Screen Shot 1](https://user-images.githubusercontent.com/26166389/188032346-08af84de-9396-4206-b6ba-6355ed7b571e.png | width=100)
-![Screen Shot 2](https://user-images.githubusercontent.com/26166389/188032348-83270e8c-4b98-4d94-9280-837097e6d91e.png | width=100)
+<img src="https://github.com/favicon.ico](https://user-images.githubusercontent.com/26166389/188032346-08af84de-9396-4206-b6ba-6355ed7b571e.png" width="100">
+<img src="https://user-images.githubusercontent.com/26166389/188032348-83270e8c-4b98-4d94-9280-837097e6d91e.png" width="100">
 
 ## React-native template 2022💿 💿 💿
 This is a template that you can use to start a react-native project in 2022
