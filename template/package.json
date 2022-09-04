@@ -10,7 +10,6 @@
 		"lint": "eslint .",
 		"web": "expo start --web",
 		"prettier-format": "prettier --config .prettierrc.js 'src/**/*.js' --write",
-		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
