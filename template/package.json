@@ -28,6 +28,7 @@
 		"@reduxjs/toolkit": "^1.8.5",
 		"axios": "^0.27.2",
 		"lottie-react-native": "^5.1.4",
+		"nativewind": "^2.0.10",
 		"react": "18.0.0",
 		"react-native": "0.69.4",
 		"react-native-gesture-handler": "^2.6.0",
@@ -37,8 +38,7 @@
 		"react-native-vector-icons": "^9.2.0",
 		"react-redux": "^8.0.2",
 		"redux-persist": "^6.0.0",
-		"redux-thunk": "^2.4.1",
-		"tailwindcss-react-native": "^1.7.10"
+		"redux-thunk": "^2.4.1"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.9",
