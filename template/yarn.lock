@@ -805,10 +805,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@digital-art-dealers/react-native-component-lib@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@digital-art-dealers/react-native-component-lib/-/react-native-component-lib-1.0.11.tgz#1e4408788d18035bcba2345e4810ffaa7b46c26d"
-  integrity sha512-gTutoV9gUkYuFmmmUv8KaGR9OEmchKdn/RmjkMZ85NYZ9T1+BjcEyybL1WJr/+4YBTbRlkzPRsJdaeVbDLEOyQ==
+"@digital-art-dealers/react-native-component-lib@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@digital-art-dealers/react-native-component-lib/-/react-native-component-lib-1.0.13.tgz#31cca685b176174f0efe9b165f8c82ea6c0bf357"
+  integrity sha512-pUcIEUbp9qhVpW9HkQ7Hy4Nljy2SK9YUwtmLV14G/dw4ikLr5SPgg0JE3YKhbDS4ijzUY2qsZFeeZvyWHWj+Ag==
 
 "@egjs/hammerjs@^2.0.17":
   version "2.0.17"
