@@ -1,11 +1,6 @@
 ### React-native template 2022💿 💿 💿
 This is a template that you can use to start a react-native project in 2022 with bottom navigation, lottie animations, and few other tools of the trade
 
-<div style="display:flex">
-  <img src="https://user-images.githubusercontent.com/26166389/188032346-08af84de-9396-4206-b6ba-6355ed7b571e.png" width="200">
-  <img src="https://user-images.githubusercontent.com/26166389/188032348-83270e8c-4b98-4d94-9280-837097e6d91e.png" width="200">
-</div>
-
 ### Using Template 💻 💻 💻 💻 💻 
 Run this command to create a new react-native project using the template
 `npx react-native init $YourAppName --template https://github.com/daboigbae/react-native-template`
