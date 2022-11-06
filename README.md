@@ -1,6 +1,7 @@
 ![IMG_9725](https://user-images.githubusercontent.com/30089055/199875237-07f734d0-4f60-4f9c-a66e-2e82a33aa410.png)
 ## React-native template 2022 📱 📱 📱
 This is a template that you can use to start a react-native project in 2022 with bottom navigation, lottie animations, and few other tools of the trade
+[If you have any questions, please message us on twitter](https://twitter.com/daboigbae) 
 
 ## Base dependencies
 - [axios](https://github.com/axios/axios) for networking.
