@@ -2,7 +2,6 @@
 ## React-native template 2022 📱 📱 📱
 This is a template that you can use to start a react-native project in 2022 with bottom navigation, lottie animations, and few other tools of the trade
 
-
 [If you have any questions, please message us on twitter](https://twitter.com/daboigbae) 
 
 [If you need developers to build your mobile app, visit our website](https://digitalartdealers.net/book_appointment/) 
@@ -18,9 +17,6 @@ This is a template that you can use to start a react-native project in 2022 with
 - [@reduxjs/toolkit](https://redux-toolkit.js.org/) to make redux implementation easier
 - [redux-persist](https://github.com/rt2zz/redux-persist) for redux store persistance.
 - [redux-thunk](https://github.com/gaearon/redux-thunk) to dispatch asynchronous actions.
-
-
-
 
 ## Using Template 💻 💻 💻 💻 💻 
 Run this command to create a new react-native project using the template
@@ -52,6 +48,9 @@ If your android app runs, but it can't connect to the react native server
 ![landing-screen](https://user-images.githubusercontent.com/30089055/199877587-c013985c-0af0-46ef-a046-1bf6710e890e.png)
 ![home-screen](https://user-images.githubusercontent.com/30089055/199877794-a7ef761e-1d3a-41cd-9d2f-9a4d77ce9c51.png)
 
+How can I support the developers?
+- Star our GitHub repo ⭐
+- Create pull requests, submit bugs, suggest new features or documentation updates 🔧
 
 
 
