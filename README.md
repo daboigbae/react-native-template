@@ -1,6 +1,6 @@
 ![IMG_9725](https://user-images.githubusercontent.com/30089055/199875237-07f734d0-4f60-4f9c-a66e-2e82a33aa410.png)
 <p align="center">
-  ⭐️ help the project by giving a star 
+  ⭐️ Help the project by giving a star ⭐️ 
 </p>
 
 ## React-native template 2022 📱
