@@ -3,7 +3,7 @@
   ⭐️ help the project by giving a star 
 </p>
 
-## React-native template 2022 📱 📱 📱
+## React-native template 2022 📱
 This is a template that you can use to start a react-native project in 2022 with bottom navigation, lottie animations, and few other tools of the trade
 
 [If you have any questions, please message us on twitter](https://twitter.com/daboigbae) 
