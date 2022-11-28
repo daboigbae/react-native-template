@@ -2,6 +2,7 @@
 <p align="center">
   ⭐️ Help the project by giving a star ⭐️ 
 </p>
+
 ## React-native template 📱
 A template that creates a new react-native project with the libraries needed to build a scalable mobile app.
 
