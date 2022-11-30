@@ -2,20 +2,33 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import PropTypes from "prop-types";
 
-import { BOTTOM_TAB_SCREENS } from "../utils/screens";
+import useLocalize from "../hooks/useLocalize";
 import HomeScreen from "../screens/HomeScreen";
+import { BOTTOM_TAB_SCREENS } from "../utils/screens";
+import { TRANSLATIONS } from "../utils/translations/translations";
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigation = () => (
-	<Tab.Navigator
-		screenOptions={() => ({
-			drawerPosition: "right",
-			headerLeft: false
-		})}>
-		<Tab.Screen name={BOTTOM_TAB_SCREENS.HOME_SCREEN} component={HomeScreen} />
-	</Tab.Navigator>
-);
+const BottomTabNavigation = () => {
+	const { translate } = useLocalize();
+
+	return (
+		<Tab.Navigator
+			screenOptions={() => ({
+				drawerPosition: "right",
+				headerLeft: false
+			})}
+		>
+			<Tab.Screen
+				name={BOTTOM_TAB_SCREENS.HOME_SCREEN}
+				component={HomeScreen}
+				options={{
+					tabBarLabel: translate(TRANSLATIONS.MAIN)
+				}}
+			/>
+		</Tab.Navigator>
+	);
+};
 
 BottomTabNavigation.propTypes = {
 	navigation: PropTypes.object
