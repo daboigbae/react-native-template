@@ -1,5 +1,6 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, View } from "react-native";
+import moment from "moment";
 import { Button } from "@digital-art-dealers/react-native-component-lib";
 
 import useLocalize from "../hooks/useLocalize";
@@ -24,6 +25,10 @@ const HomeScreen = () => {
 				onPress={() => {}}
 				label={translate(TRANSLATIONS.CHANGE_BUTTON)}
 			/>
+			<Text className="text-2xl font-bold text-center mt-8">Todays Date</Text>
+			<Text className="text-center text-lg">
+				{moment(new Date()).format("YYYY-MM-DD")}
+			</Text>
 		</View>
 	);
 };
