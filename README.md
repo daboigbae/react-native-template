@@ -14,9 +14,13 @@ Run this command to create a new project using the template
 
 # 📦Installed packages
 - [axios](https://github.com/axios/axios) for networking.
+- [i18n-js](https://www.npmjs.com/package/i18n-js) small library to provide the i18n translations with JavaScript
+- [lodash](https://lodash.com/) modern Javascript library delivering modularity and performance
 - [lottie-react-native](https://github.com/lottie-react-native/lottie-react-native) an ecosystem of libraries for parsing Adobe After Effects animations exported as JSON
+- [moment](https://momentjs.com/) library to parse, validate, manipulate and display date/time in JavaScript
 - [Munchkin](https://munchkinreact.app/) a react native component library
 - [nativewind](https://www.nativewind.dev/) a universal style system
+- [react-native-localize](https://www.npmjs.com/package/react-native-localize) a toolbox for your React Native app localization
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) an icon library.
 - [react-navigation](https://reactnavigation.org/) navigation library.
 - [redux](https://redux.js.org/) for state management.

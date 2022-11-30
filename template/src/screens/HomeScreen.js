@@ -12,11 +12,13 @@ const HomeScreen = () => {
 	const navigation = useNavigation();
 	const { translate } = useLocalize();
 
+	// TODO: This can be removed or changed according to project needs
 	useLayoutEffect(() => {
 		navigation.setOptions({
 			headerTitle: translate(TRANSLATIONS.MAIN)
 		});
 	}, [navigation]);
+
 	return (
 		<View className="h-full w-full justify-center px-4">
 			<Button

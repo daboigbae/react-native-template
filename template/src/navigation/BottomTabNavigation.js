@@ -9,16 +9,16 @@ import { TRANSLATIONS } from "../utils/translations/translations";
 
 const Tab = createBottomTabNavigator();
 
+const TAB_SCREEN_OPTIONS = {
+	drawerPosition: "right",
+	headerLeft: false
+};
+
 const BottomTabNavigation = () => {
 	const { translate } = useLocalize();
 
 	return (
-		<Tab.Navigator
-			screenOptions={() => ({
-				drawerPosition: "right",
-				headerLeft: false
-			})}
-		>
+		<Tab.Navigator screenOptions={TAB_SCREEN_OPTIONS}>
 			<Tab.Screen
 				name={BOTTOM_TAB_SCREENS.HOME_SCREEN}
 				component={HomeScreen}
