@@ -1,4 +1,4 @@
-# 📱Basic `React Native Template`
+# 📱`React Native Template`
 <p align="center">
   <img src="https://user-images.githubusercontent.com/30089055/199875237-07f734d0-4f60-4f9c-a66e-2e82a33aa410.png" width="100%" />
 </p>
