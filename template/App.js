@@ -1,32 +1,32 @@
 import React from "react";
-import "react-native-gesture-handler";
+import {useEffect} from "react";
+import {Provider} from "react-redux";
 
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { persistStore } from "redux-persist";
+import {persistStore} from "redux-persist";
+import {PersistGate} from "redux-persist/integration/react";
 
-import Navigation from "./src/navigation/Navigation";
-
-import store from "./src/redux/store";
 import useLocalize from "./src/hooks/useLocalize";
-import { useEffect } from "react";
+import Navigation from "./src/navigation/Navigation";
+import store from "./src/redux/store";
+
+import "react-native-gesture-handler";
 
 const persistor = persistStore(store);
 
 const App = () => {
-	const { setI18nConfig } = useLocalize();
+    const {setI18nConfig} = useLocalize();
 
-	useEffect(() => {
-		setI18nConfig();
-	}, [setI18nConfig]);
+    useEffect(() => {
+        setI18nConfig();
+    }, [setI18nConfig]);
 
-	return (
-		<Provider store={store}>
-			<PersistGate persistor={persistor}>
-				<Navigation />
-			</PersistGate>
-		</Provider>
-	);
+    return (
+        <Provider store={store}>
+            <PersistGate persistor={persistor}>
+                <Navigation />
+            </PersistGate>
+        </Provider>
+    );
 };
 
 export default App;
