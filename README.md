@@ -17,7 +17,6 @@ Run this command to create a new project with the template
 - [lodash](https://lodash.com/) modern Javascript library delivering modularity and performance
 - [lottie-react-native](https://github.com/lottie-react-native/lottie-react-native) an ecosystem of libraries for parsing Adobe After Effects animations exported as JSON
 - [moment](https://momentjs.com/) library to parse, validate, manipulate and display date/time in JavaScript
-- [Munchkin](https://munchkinreact.app/) a react native component library
 - [nativewind](https://www.nativewind.dev/) a universal style system
 - [react-native-localize](https://www.npmjs.com/package/react-native-localize) a toolbox for your React Native app localization
 - [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) an icon library.
@@ -54,9 +53,16 @@ If your android app runs, but it can't connect to the react native server
 <p align="center">
 <img src="https://github.com/daboigbae/images/blob/main/IMG_9271.PNG" width="90%" />
 </p>
-
 # 🚧 Projects built with this Template
-- [123 Help App](https://123helpapp.com/) 
+
+- [123 Help App](https://123helpapp.com/)
+
+- [YourTales App](https://apps.apple.com/us/app/your-tales-ai-bedtime-stories/id6449475188)
+
+- [Bingo](https://digitalartdealers.net/bingo/)
+
+- [Trade School](https://www.tradeschoolinc.com/)
+
 
 # 🙏 Support
 We all need support and motivation. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
