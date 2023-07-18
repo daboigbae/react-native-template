@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires 
 const {getDefaultConfig, mergeConfig} = require("@react-native/metro-config");
 
 /**
@@ -6,6 +7,10 @@ const {getDefaultConfig, mergeConfig} = require("@react-native/metro-config");
  *
  * @type {import('metro-config').MetroConfig}
  */
-const config = {};
+const config = {
+	resolver: {
+		sourceExts: ["jsx", "js", "ts", "tsx", "mjs", "json"], // Add "mjs" as a valid extension
+	},
+};
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);

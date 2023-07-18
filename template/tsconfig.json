@@ -2,6 +2,11 @@
 {
 	"extends": "@tsconfig/react-native/tsconfig.json", /* Recommended React Native TSConfig base */
 	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"strict": true,
+		"jsx": "react",
+		"esModuleInterop": true, 
 		/* Visit https://aka.ms/tsconfig.json to read more about this file */
 		"baseUrl": ".",
 		"paths": {

@@ -26,6 +26,8 @@ Run this command to create a new project with the template
 - [@reduxjs/toolkit](https://redux-toolkit.js.org/) to make redux implementation easier
 - [redux-persist](https://github.com/rt2zz/redux-persist) for redux store persistance.
 - [redux-thunk](https://github.com/gaearon/redux-thunk) to dispatch asynchronous actions.
+- [type-script](https://www.typescriptlang.org/) for typing and general robustness
+
 
 # 🏃‍♀️Running Your New App
 #### 📱iOS

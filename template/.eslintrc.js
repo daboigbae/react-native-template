@@ -11,8 +11,10 @@ module.exports = {
 		"plugin:react/recommended",
 		"prettier",
 		"eslint:recommended",
-		"plugin:jest/recommended"
+		"plugin:jest/recommended", 
+		"plugin:@typescript-eslint/recommended" // Add TypeScript ESLint plugin
 	],
+	parser: "@typescript-eslint/parser", // Specify the TypeScript parser
 
 	parserOptions: {
 		ecmaFeatures: {
@@ -22,7 +24,7 @@ module.exports = {
 		sourceType: "module"
 	},
 
-	plugins: ["react", "react-native", "detox"],
+	plugins: ["react", "react-native", "detox", "@typescript-eslint"],
 	ignorePatterns: ["!.*", "dist", "node_modules"],
 	rules: {
 		indent: [
@@ -37,7 +39,9 @@ module.exports = {
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
 		"no-console": ["error"],
-		"no-unused-vars": ["error", { vars: "all" }]
+		"no-unused-vars": "off", // Disable the default rule for unused variables
+		"@typescript-eslint/no-unused-vars": ["error", { vars: "all" }] // Enable TypeScript-specific rule for unused variables
+
 	},
 
 	settings: {
