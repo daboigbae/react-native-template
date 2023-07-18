@@ -7,7 +7,6 @@ import {useNavigation} from "@react-navigation/native";
 import moment from "moment";
 
 import useLocalize from "@hooks/useLocalize";
-import {TRANSLATION_KEYS} from "@utils/translations/translations";
 
 const HomeScreen = () => {
 	const navigation = useNavigation();
