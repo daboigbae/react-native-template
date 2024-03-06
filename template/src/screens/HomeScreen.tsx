@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import {useLayoutEffect} from "react";
-import {ActivityIndicator, Text, TouchableOpacity, View} from "react-native";
+import {Text, View} from "react-native";
 
 import {useNavigation} from "@react-navigation/native";
 import moment from "moment";
 
+import Button from "@components/common/Button";
 import useExample from "@hooks/useExample";
 import useLocalize from "@hooks/useLocalize";
 
@@ -43,17 +44,14 @@ const HomeScreen = () => {
 			<Text className="text-center text-lg">
 				{moment(new Date()).format("YYYY-MM-DD")}
 			</Text>
-			<TouchableOpacity
+
+			<Button
+				buttonStyle="w-full bg-blue-600 h-12 rounded-lg justify-center items-center"
 				onPress={getExampleData}
-				className="w-full h-12 justify-center items-center bg-blue-600 rounded-lg mt-4">
-				{isLoading ? (
-					<ActivityIndicator color="white" />
-				) : (
-					<Text className="text-white text-center">
-						Get Example Data
-					</Text>
-				)}
-			</TouchableOpacity>
+				label="Get Example Data"
+				isLoading={isLoading}
+				isDisabled={isLoading}
+			/>
 			{data && (
 				<Text className="text-center mt-4">
 					{`Example Data: ${data.attributes.body}`}
