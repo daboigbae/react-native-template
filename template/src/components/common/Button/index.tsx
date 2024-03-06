@@ -1,6 +1,7 @@
 import React from "react";
-import {ActivityIndicator, Text, TouchableOpacity} from "react-native";
+import {Text, TouchableOpacity} from "react-native";
 
+import Loader from "../Loader";
 import {ButtonProps} from "./types";
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,7 +20,11 @@ const Button: React.FC<ButtonProps> = ({
 			onPress={onPress}
 			className={`${buttonStyle} ${isDisabled && "bg-gray-400"}`}>
 			{isLoading ? (
-				<ActivityIndicator color={loaderColor} size={loaderSize} />
+				<Loader
+					cover
+					loaderColor={loaderColor}
+					loaderSize={loaderSize}
+				/>
 			) : (
 				<Text className={`${textStyle}`}>{label}</Text>
 			)}
