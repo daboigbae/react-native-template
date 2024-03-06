@@ -2,7 +2,6 @@ import React from "react";
 import {useLayoutEffect} from "react";
 import {Text, View} from "react-native";
 
-
 import {useNavigation} from "@react-navigation/native";
 import moment from "moment";
 

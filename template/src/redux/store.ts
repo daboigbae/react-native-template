@@ -7,20 +7,20 @@ import {thunk} from "redux-thunk";
 import UserSlice from "./UserSlice";
 
 const reducers = combineReducers({
-	UserSlice
+	UserSlice,
 });
 
 const persistConfig = {
 	key: "root",
 	storage: AsyncStorage,
-	whitelist: [] // add reducers you want to persist here
+	whitelist: [], // add reducers you want to persist here
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
 const store = configureStore({
 	reducer: persistedReducer,
-	middleware: [thunk]
+	middleware: [thunk],
 });
 
 export default store;
