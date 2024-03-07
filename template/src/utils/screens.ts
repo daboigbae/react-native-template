@@ -6,6 +6,7 @@ export const NAVIGATOR_HOME_STACK = "Home Stack" as const;
 
 export const HOME_SCREENS = {
 	MAIN_SCREEN: "Main",
+	PROFILE_SCREEN: "Profile",
 } as const;
 
 export const SIGNED_OUT_SCREENS = {

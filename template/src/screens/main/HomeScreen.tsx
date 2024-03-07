@@ -1,8 +1,6 @@
 import React, {useState} from "react";
-import {useLayoutEffect} from "react";
 import {ScrollView, Text, View} from "react-native";
 
-import {useNavigation} from "@react-navigation/native";
 import moment from "moment";
 
 import Avatar from "@components/common/Avatar";
@@ -10,7 +8,6 @@ import AwareView from "@components/common/AwareView";
 import Button from "@components/common/Button";
 import TextInput from "@components/common/TextInput";
 import useExample from "@hooks/useExample";
-import useLocalize from "@hooks/useLocalize";
 
 // For example purposes. Replace with your own data structure or remove if not needed
 interface DataProps {
@@ -20,9 +17,6 @@ interface DataProps {
 }
 
 const HomeScreen = () => {
-	const navigation = useNavigation();
-	const {translate} = useLocalize();
-
 	const {get, isLoading} = useExample();
 
 	const [data, setData] = useState<DataProps | null>(null);
@@ -32,13 +26,6 @@ const HomeScreen = () => {
 		const results = await get();
 		setData(results[0]);
 	};
-
-	// TODO: This can be removed or changed according to project needs
-	useLayoutEffect(() => {
-		navigation.setOptions({
-			headerTitle: translate("changeButton"),
-		});
-	}, [navigation, translate]);
 
 	return (
 		<AwareView backgroundColor="bg-white">

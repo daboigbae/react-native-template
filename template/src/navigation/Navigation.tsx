@@ -4,7 +4,11 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 
 import LandingScreen from "@screens/LandingScreen";
-import {NAVIGATOR_LANDING, NAVIGATOR_SIGNED_IN_STACK, NAVIGATOR_SIGNED_OUT_STACK} from "@utils/screens";
+import {
+	NAVIGATOR_LANDING,
+	NAVIGATOR_SIGNED_IN_STACK,
+	NAVIGATOR_SIGNED_OUT_STACK,
+} from "@utils/screens";
 
 import SignedInStack from "./stacks/SignedInStack";
 import SignedOutStack from "./stacks/SignedOutStack";
@@ -13,6 +17,12 @@ const Stack = createStackNavigator();
 
 const NAVIGATION_OPTIONS = {
 	headerShown: false,
+};
+
+export type NavigationParams = {
+	[NAVIGATOR_LANDING]: undefined;
+	[NAVIGATOR_SIGNED_IN_STACK]: undefined;
+	[NAVIGATOR_SIGNED_OUT_STACK]: undefined;
 };
 
 const Navigation = () => (

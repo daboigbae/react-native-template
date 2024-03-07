@@ -9,7 +9,7 @@ const Avatar: React.FC<AvatarProps> = ({
 	username,
 	isLoading,
 	image,
-	size,
+	size = 96,
 }) => {
 	const avatarContainerBaseStyle =
 		type === "square"
@@ -47,7 +47,15 @@ const Avatar: React.FC<AvatarProps> = ({
 					className={`${avatarContainerBaseStyle} w-full h-full`}
 				/>
 			) : (
-				username && <Text>{getUsernameInitials(username)}</Text>
+				username && (
+					<Text
+						style={{
+							fontSize: size / 3,
+						}}
+						className="font-bold mt-1">
+						{getUsernameInitials(username)}
+					</Text>
+				)
 			)}
 		</View>
 	);

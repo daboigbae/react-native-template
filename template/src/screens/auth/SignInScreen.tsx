@@ -9,12 +9,15 @@ import LandingAnimation from "@assets/lottie/landingAnimation.json";
 import AwareView from "@components/common/AwareView";
 import Button from "@components/common/Button";
 import TextInput from "@components/common/TextInput";
+import {NavigationParams} from "@navigation/Navigation";
 import {SignedOutStackParams} from "@navigation/stacks/SignedOutStack";
-import {SIGNED_OUT_SCREENS} from "@utils/screens";
+import {NAVIGATOR_SIGNED_IN_STACK, SIGNED_OUT_SCREENS} from "@utils/screens";
 
 const SignInScreen = () => {
 	const navigation =
-		useNavigation<NativeStackNavigationProp<SignedOutStackParams>>();
+		useNavigation<
+			NativeStackNavigationProp<SignedOutStackParams & NavigationParams>
+		>();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -25,6 +28,10 @@ const SignInScreen = () => {
 
 	const handleForgotPasswordNavigation = () => {
 		navigation.navigate(SIGNED_OUT_SCREENS.FORGOT_PASSWORD_SCREEN);
+	};
+
+	const handleSignIn = () => {
+		navigation.replace(NAVIGATOR_SIGNED_IN_STACK);
 	};
 
 	return (
@@ -75,7 +82,7 @@ const SignInScreen = () => {
 					<View className="h-6" />
 					<Button
 						isDisabled={!email || !password}
-						onPress={() => {}}
+						onPress={handleSignIn}
 						label="Sign In"
 					/>
 

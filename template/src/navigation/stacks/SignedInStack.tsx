@@ -12,6 +12,10 @@ const NAVIGATION_OPTIONS = {
 	headerShown: false,
 };
 
+export type SignedInStackParams = {
+	[NAVIGATOR_HOME_STACK]: undefined;
+};
+
 const SignedInStack = () => {
 	return (
 		<Stack.Navigator screenOptions={NAVIGATION_OPTIONS}>
