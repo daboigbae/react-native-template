@@ -1,19 +1,27 @@
 import React, {useState} from "react";
-import {ScrollView, Text, View} from "react-native";
+import {Alert, ScrollView, Text, View} from "react-native";
 
+import {useNavigation} from "@react-navigation/native";
+import {NativeStackNavigationProp} from "@react-navigation/native-stack";
 import LottieView from "lottie-react-native";
 
 import LandingAnimation from "@assets/lottie/landingAnimation.json";
 import AwareView from "@components/common/AwareView";
 import Button from "@components/common/Button";
 import TextInput from "@components/common/TextInput";
+import {SignedOutStackParams} from "@navigation/stacks/SignedOutStack";
+const ForgotPasswordScreen = () => {
+	const navigation =
+		useNavigation<NativeStackNavigationProp<SignedOutStackParams>>();
 
-const SignUpScreen = () => {
 	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
 
-	const handleSignUp = () => {
-		// TODO: Handle Sign UP
+	const handleForgotPassword = () => {
+		Alert.alert(
+			"Password Reset",
+			"Password reset link has been sent to your email"
+		);
+		navigation.goBack();
 	};
 
 	return (
@@ -30,10 +38,10 @@ const SignUpScreen = () => {
 						loop
 					/>
 					<Text className="text-blue-700 text-xl">
-						Excited To Have You Onboard!
+						Forgot Your Password ?
 					</Text>
 					<Text className="font-light text-lg text-center">
-						Sign up with your email and password
+						Enter your email address to reset your password
 					</Text>
 					<View className="h-4" />
 					<TextInput
@@ -44,21 +52,12 @@ const SignUpScreen = () => {
 						placeholder="Email Address"
 					/>
 					<View className="h-4" />
-					<TextInput
-						onChangeText={setPassword}
-						value={password}
-						backgroundColor="bg-gray-100"
-						borderLess
-						borderColor="border-gray-400"
-						type="password"
-						placeholder="Password"
-					/>
-					<View className="h-6" />
-					<Button isDisabled={!email || !password} onPress={handleSignUp} label="Sign Up" />
+
+					<Button isDisabled={!email} onPress={handleForgotPassword} label="Reset Password" />
 				</View>
 			</ScrollView>
 		</AwareView>
 	);
 };
 
-export default SignUpScreen;
+export default ForgotPasswordScreen;

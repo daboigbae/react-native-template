@@ -23,6 +23,10 @@ const SignInScreen = () => {
 		navigation.navigate(SIGNED_OUT_SCREENS.SIGN_UP_SCREEN);
 	};
 
+	const handleForgotPasswordNavigation = () => {
+		navigation.navigate(SIGNED_OUT_SCREENS.FORGOT_PASSWORD_SCREEN);
+	};
+
 	return (
 		<AwareView>
 			<ScrollView
@@ -37,7 +41,7 @@ const SignInScreen = () => {
 						loop
 					/>
 					<View className="h-3" />
-					<Text className="text-blue-700 text-xl">Welcome Back!</Text>
+					<Text className="text-blue-600 text-xl">Welcome Back!</Text>
 					<Text className="font-light text-lg text-center">
 						To continue, sign in with your email and password.
 					</Text>
@@ -59,8 +63,21 @@ const SignInScreen = () => {
 						type="password"
 						placeholder="Password"
 					/>
+					<View className="self-end mt-3">
+						<Button
+							onPress={handleForgotPasswordNavigation}
+							buttonBackground="bg-transparent"
+							buttonHeight="h-auto"
+							textStyle="text-sm text-blue-600"
+							label="Forgot Password?"
+						/>
+					</View>
 					<View className="h-6" />
-					<Button onPress={() => {}} label="Sign In" />
+					<Button
+						isDisabled={!email || !password}
+						onPress={() => {}}
+						label="Sign In"
+					/>
 
 					<View className="flex-row justify-between items-center my-8">
 						<View className=" flex-[1] h-[.4px] bg-gray-400" />
@@ -76,7 +93,7 @@ const SignInScreen = () => {
 							buttonBackground="bg-transparent"
 							buttonWidth="w-16"
 							buttonHeight="h-auto"
-							textStyle="text-sm text-blue-800"
+							textStyle="text-sm text-blue-600"
 							label="Sign Up"
 						/>
 					</View>

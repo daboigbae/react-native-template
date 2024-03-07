@@ -29,9 +29,9 @@ const Button: React.FC<ButtonProps> = ({
 		<TouchableOpacity
 			disabled={isDisabled || isLoading}
 			onPress={onPress}
-			className={`${baseButtonStyle} ${buttonBackground}  ${borderStyle} ${
-				isDisabled && "bg-gray-400"
-			} ${buttonHeight} ${buttonBackground} ${borderRadius} ${buttonWidth}`}>
+			className={`${baseButtonStyle} ${
+				isDisabled ? "bg-gray-400" : buttonBackground
+			} ${borderStyle} ${buttonHeight}  ${borderRadius} ${buttonWidth}`}>
 			{isLoading ? (
 				<Loader
 					cover
