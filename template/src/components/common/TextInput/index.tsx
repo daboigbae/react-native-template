@@ -11,7 +11,7 @@ const TextInput: React.FC<TextInputProps> = ({
 	onChangeText,
 	labelStyle = "text-base mb-1",
 	labelPosition = "start",
-	inputStyle = "w-full h-12 bg-white rounded-lg px-4 justify-center items-center flex-row",
+	inputStyle = "w-full h-12 bg-white rounded-lg px-4 justify-center items-center flex-row border border-gray-300",
 	type = "text",
 	...props
 }) => {
