@@ -5,20 +5,33 @@ import Loader from "../Loader";
 import {ButtonProps} from "./types";
 
 const Button: React.FC<ButtonProps> = ({
-	buttonStyle = "w-full h-12 justify-center items-center bg-blue-600",
+	buttonHeight = "h-12",
+	buttonWidth = "w-full",
+	buttonBackground = "bg-blue-600",
 	textStyle = "text-white font-bold text-lg",
+	borderLess = true,
+	borderColor = "border-blue-600",
+	borderWidth = "border",
 	isLoading,
 	isDisabled,
 	label,
 	onPress,
 	loaderColor = "white",
 	loaderSize = "small",
+	borderRadius = "rounded-lg",
 }) => {
+	const baseButtonStyle = "justify-center items-center";
+	const borderStyle = borderLess
+		? "border-none"
+		: `border ${borderColor} ${borderWidth}`;
+
 	return (
 		<TouchableOpacity
 			disabled={isDisabled || isLoading}
 			onPress={onPress}
-			className={`${buttonStyle} ${isDisabled && "bg-gray-400"}`}>
+			className={`${baseButtonStyle} ${buttonBackground}  ${borderStyle} ${
+				isDisabled && "bg-gray-400"
+			} ${buttonHeight} ${buttonBackground} ${borderRadius} ${buttonWidth}`}>
 			{isLoading ? (
 				<Loader
 					cover

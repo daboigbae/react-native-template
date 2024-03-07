@@ -7,4 +7,11 @@ export interface ButtonProps {
 	onPress: () => void;
 	loaderColor?: string;
 	loaderSize?: "small" | "large";
+	buttonHeight?: string;
+	buttonBackground?: string;
+	borderLess?: boolean;
+	borderColor?: string;
+	borderWidth?: string;
+	borderRadius?: string;
+	buttonWidth?: string;
 }

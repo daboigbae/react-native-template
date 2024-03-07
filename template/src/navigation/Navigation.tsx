@@ -4,9 +4,10 @@ import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 
 import LandingScreen from "@screens/LandingScreen";
-import {NAVIGATOR_BOTTOM_TAB, NAVIGATOR_LANDING} from "@utils/screens";
+import {NAVIGATOR_LANDING, NAVIGATOR_SIGNED_IN_STACK, NAVIGATOR_SIGNED_OUT_STACK} from "@utils/screens";
 
-import BottomTabNavigation from "./BottomTabNavigation";
+import SignedInStack from "./stacks/SignedInStack";
+import SignedOutStack from "./stacks/SignedOutStack";
 
 const Stack = createStackNavigator();
 
@@ -23,8 +24,13 @@ const Navigation = () => (
 				options={NAVIGATION_OPTIONS}
 			/>
 			<Stack.Screen
-				name={NAVIGATOR_BOTTOM_TAB}
-				component={BottomTabNavigation}
+				name={NAVIGATOR_SIGNED_IN_STACK}
+				component={SignedInStack}
+				options={NAVIGATION_OPTIONS}
+			/>
+			<Stack.Screen
+				name={NAVIGATOR_SIGNED_OUT_STACK}
+				component={SignedOutStack}
 				options={NAVIGATION_OPTIONS}
 			/>
 		</Stack.Navigator>

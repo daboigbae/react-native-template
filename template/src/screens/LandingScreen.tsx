@@ -5,7 +5,7 @@ import {ParamListBase} from "@react-navigation/native";
 import {StackScreenProps} from "@react-navigation/stack";
 import LottieView from "lottie-react-native";
 
-import {NAVIGATOR_BOTTOM_TAB} from "@utils/screens";
+import {NAVIGATOR_SIGNED_OUT_STACK} from "@utils/screens";
 
 import LandingAnimation from "../assets/lottie/landingAnimation.json";
 
@@ -14,7 +14,7 @@ type Props = StackScreenProps<ParamListBase, "Landing Stack">;
 const LandingScreen: React.FC<Props> = ({navigation}) => {
 	useEffect(() => {
 		setTimeout(() => {
-			navigation.replace(NAVIGATOR_BOTTOM_TAB);
+			navigation.replace(NAVIGATOR_SIGNED_OUT_STACK);
 		}, 3000); // Mocking data loading at landing screen
 	}, [navigation]);
 

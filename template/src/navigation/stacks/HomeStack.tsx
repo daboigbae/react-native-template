@@ -4,8 +4,8 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
 import useLocalize from "@hooks/useLocalize";
-import HomeScreen from "@screens/HomeScreen";
-import {BOTTOM_TAB_SCREENS} from "@utils/screens";
+import HomeScreen from "@screens/main/HomeScreen";
+import {HOME_SCREENS} from "@utils/screens";
 import {TRANSLATION_KEYS} from "@utils/translations/translations";
 
 const Tab = createBottomTabNavigator();
@@ -18,19 +18,19 @@ const TAB_SCREEN_OPTIONS = {
 interface HomeIconProps {
 	color: string;
 	size: number;
-  }
+}
 
-const HomeIcon: React.FC<HomeIconProps> = ({ color, size }) => (
+const HomeIcon: React.FC<HomeIconProps> = ({color, size}) => (
 	<Icon name="home" color={color} size={size} />
 );
 
-const BottomTabNavigation = () => {
+const HomeStack = () => {
 	const {translate} = useLocalize();
 
 	return (
 		<Tab.Navigator screenOptions={TAB_SCREEN_OPTIONS}>
 			<Tab.Screen
-				name={BOTTOM_TAB_SCREENS.HOME_SCREEN}
+				name={HOME_SCREENS.MAIN_SCREEN}
 				component={HomeScreen}
 				options={{
 					tabBarLabel: translate(TRANSLATION_KEYS.MAIN),
@@ -41,5 +41,4 @@ const BottomTabNavigation = () => {
 	);
 };
 
-
-export default BottomTabNavigation;
+export default HomeStack;

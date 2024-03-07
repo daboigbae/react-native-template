@@ -5,17 +5,22 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import {TextInputProps} from "./types";
 
 const TextInput: React.FC<TextInputProps> = ({
-	backgroundColor,
+	backgroundColor = "bg-white",
 	label,
 	value,
 	onChangeText,
+	borderLess = false,
 	labelStyle = "text-base mb-1",
 	labelPosition = "start",
-	inputStyle = "w-full h-12 bg-white rounded-lg px-4 justify-center items-center flex-row border border-gray-300",
+	borderColor = "border-gray-400",
+	inputStyle = "h-12 rounded-lg px-4 justify-center items-center flex-row",
 	type = "text",
 	...props
 }) => {
 	const [isSecure, setIsSecure] = useState(true);
+
+	const baseInputStyle = "w-full justify-center items-center flex-row ";
+	const borderStyle = borderLess ? "border-none" : "border";
 
 	const position =
 		labelPosition === "start"
@@ -36,7 +41,8 @@ const TextInput: React.FC<TextInputProps> = ({
 			{label && (
 				<Text className={`${labelStyle} ${position} `}>{label}</Text>
 			)}
-			<View className={`${inputStyle} `}>
+			<View
+				className={`${inputStyle} ${backgroundColor} ${baseInputStyle} ${borderStyle} ${borderColor} `}>
 				{isSearch && (
 					<View className="mr-2">
 						<Icon name="search" size={24} color="gray" />
