@@ -1,6 +1,6 @@
 import React from "react";
 
-import {createStackNavigator} from "@react-navigation/stack";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
 import HeaderBackButton from "@components/common/Header/HeaderBackButton";
 import ForgotPasswordScreen from "@screens/auth/ForgotPasswordScreen";
@@ -8,7 +8,7 @@ import SignInScreen from "@screens/auth/SignInScreen";
 import SignUpScreen from "@screens/auth/SignUpScreen";
 import {SIGNED_OUT_SCREENS} from "@utils/screens";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export type SignedOutStackParams = {
 	[SIGNED_OUT_SCREENS.SIGN_IN_SCREEN]: undefined;
