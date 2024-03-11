@@ -37,6 +37,32 @@ const ProfileScreen = () => {
 			},
 		});
 	};
+	const handleMicrophonePermissionTest = () => {
+		navigation.navigate(NAVIGATOR_MODAL_STACK, {
+			screen: MODAL_SCREENS.PERMISSION_SCREEN,
+			params: {
+				permissionType: "microphone",
+			},
+		});
+	};
+
+	const handleCameraPermissionTest = () => {
+		navigation.navigate(NAVIGATOR_MODAL_STACK, {
+			screen: MODAL_SCREENS.PERMISSION_SCREEN,
+			params: {
+				permissionType: "camera",
+			},
+		});
+	};
+
+	const handleGalleryPermissionTest = () => {
+		navigation.navigate(NAVIGATOR_MODAL_STACK, {
+			screen: MODAL_SCREENS.PERMISSION_SCREEN,
+			params: {
+				permissionType: "gallery",
+			},
+		});
+	};
 
 	return (
 		<View className="h-full w-full bg-white justify-start items-center px-4">
@@ -57,6 +83,24 @@ const ProfileScreen = () => {
 				onPress={handleNotificationPermissionTest}
 				label="Notification Permission Test"
 				icon="notifications"
+			/>
+			<View className="h-3" />
+			<ProfileSelectableItem
+				onPress={handleMicrophonePermissionTest}
+				label="Microphone Permission Test"
+				icon="mic"
+			/>
+			<View className="h-3" />
+			<ProfileSelectableItem
+				onPress={handleCameraPermissionTest}
+				label="Camera Permission Test"
+				icon="camera-alt"
+			/>
+			<View className="h-3" />
+			<ProfileSelectableItem
+				onPress={handleGalleryPermissionTest}
+				label="Gallery Permission Test"
+				icon="photo"
 			/>
 			<View className="h-3" />
 			<ProfileSelectableItem

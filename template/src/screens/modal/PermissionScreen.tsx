@@ -4,13 +4,21 @@ import {ScrollView, Text, View} from "react-native";
 import {useRoute} from "@react-navigation/native";
 import LottieView from "lottie-react-native";
 
+import CameraAnimation from "@assets/lottie/cameraAnimation.json";
+import GalleryAnimation from "@assets/lottie/galleryAnimation.json";
 import LandingAnimation from "@assets/lottie/landingAnimation.json";
 import LocationAnimation from "@assets/lottie/locationPermissionAnimation.json";
+import MicrophoneAnimation from "@assets/lottie/microphoneAnimation.json";
 import NotificationAnimation from "@assets/lottie/notificationAnimation.json";
 import Button from "@components/common/Button";
 
 interface RouteParams {
-	permissionType: "location" | "camera" | "notifications" | "microphone";
+	permissionType:
+		| "location"
+		| "camera"
+		| "notifications"
+		| "microphone"
+		| "gallery";
 }
 
 const PermissionScreen = () => {
@@ -35,6 +43,30 @@ const PermissionScreen = () => {
 					permissionDescription:
 						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
 					buttonLabel: "Enable Notifications",
+				};
+			case "microphone":
+				return {
+					permissionAnimation: MicrophoneAnimation,
+					permissionTitle: "Enable Microphone Permission",
+					permissionDescription:
+						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
+					buttonLabel: "Enable Microphone",
+				};
+			case "camera":
+				return {
+					permissionAnimation: CameraAnimation,
+					permissionTitle: "Enable Camera Permission",
+					permissionDescription:
+						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
+					buttonLabel: "Enable Camera",
+				};
+			case "gallery":
+				return {
+					permissionAnimation: GalleryAnimation,
+					permissionTitle: "Enable Gallery Permission",
+					permissionDescription:
+						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
+					buttonLabel: "Enable Gallery",
 				};
 			default:
 				return {
