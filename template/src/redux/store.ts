@@ -1,8 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {configureStore} from "@reduxjs/toolkit";
-import {combineReducers} from "redux";
-import {persistReducer} from "redux-persist";
-import thunk from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
+import { persistReducer } from "redux-persist";
+import {thunk} from "redux-thunk";
 
 import UserSlice from "./UserSlice";
 
