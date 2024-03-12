@@ -46,6 +46,7 @@ const SignInScreen = () => {
 						style={{width: "80%"}}
 						autoPlay
 						loop
+						resizeMode="cover"
 					/>
 					<View className="h-3" />
 					<Text className="text-blue-600 text-xl">Welcome Back!</Text>

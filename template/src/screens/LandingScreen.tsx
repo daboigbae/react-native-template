@@ -25,6 +25,7 @@ const LandingScreen: React.FC<Props> = ({navigation}) => {
 				style={{width: "70%"}}
 				autoPlay
 				loop
+				resizeMode="cover"
 			/>
 		</View>
 	);

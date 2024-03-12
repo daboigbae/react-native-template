@@ -36,6 +36,7 @@ const ForgotPasswordScreen = () => {
 						style={{width: "80%"}}
 						autoPlay
 						loop
+						resizeMode="cover"
 					/>
 					<Text className="text-blue-700 text-xl">
 						Forgot Your Password ?

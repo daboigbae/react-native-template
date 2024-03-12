@@ -1,5 +1,5 @@
 import React from "react";
-import {ScrollView, Text, View} from "react-native";
+import {Alert, ScrollView, Text, View} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
 
 import {useNavigation} from "@react-navigation/native";
@@ -7,6 +7,7 @@ import {StackNavigationProp} from "@react-navigation/stack";
 
 import Avatar from "@components/common/Avatar";
 import ProfileSelectableItem from "@components/profile/ProfileSelectableItem";
+import usePermissions from "@hooks/usePermissions";
 import {NavigationParams} from "@navigation/Navigation";
 import {
 	MODAL_SCREENS,
@@ -16,53 +17,103 @@ import {
 
 const ProfileScreen = () => {
 	const navigation = useNavigation<StackNavigationProp<NavigationParams>>();
+	const {
+		getCameraPermission,
+		getGalleryPermission,
+		getMicrophonePermission,
+		getNotificationsPermission,
+		getLocationPermission,
+	} = usePermissions();
 
 	const handleSignOut = () => {
 		navigation.replace(NAVIGATOR_LANDING);
 	};
 
-	const handleLocationPermissionTest = () => {
-		navigation.navigate(NAVIGATOR_MODAL_STACK, {
-			screen: MODAL_SCREENS.PERMISSION_SCREEN,
-			params: {
-				permissionType: "location",
-			},
-		});
+	const handleLocationPermissionTest = async() => {
+		const permission = await getLocationPermission();
+		if (permission === "granted") {
+			Alert.alert(
+				"Permission Granted",
+				"You have already granted location permission"
+			);
+		} else {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_SCREEN,
+				params: {
+					permissionType: "location",
+				},
+			});
+		}
 	};
 
-	const handleNotificationPermissionTest = () => {
-		navigation.navigate(NAVIGATOR_MODAL_STACK, {
-			screen: MODAL_SCREENS.PERMISSION_SCREEN,
-			params: {
-				permissionType: "notifications",
-			},
-		});
+	const handleNotificationPermissionTest = async () => {
+		const permission = await getNotificationsPermission();
+
+		if (permission === "granted") {
+			Alert.alert(
+				"Permission Granted",
+				"You have already granted notification permission"
+			);
+		} else {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_SCREEN,
+				params: {
+					permissionType: "notifications",
+				},
+			});
+		}
 	};
-	const handleMicrophonePermissionTest = () => {
-		navigation.navigate(NAVIGATOR_MODAL_STACK, {
-			screen: MODAL_SCREENS.PERMISSION_SCREEN,
-			params: {
-				permissionType: "microphone",
-			},
-		});
+	const handleMicrophonePermissionTest = async () => {
+		const permission = await getMicrophonePermission();
+		if (permission === "granted") {
+			Alert.alert(
+				"Permission Granted",
+				"You have already granted microphone permission"
+			);
+		} else {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_SCREEN,
+				params: {
+					permissionType: "microphone",
+				},
+			});
+		}
 	};
 
-	const handleCameraPermissionTest = () => {
-		navigation.navigate(NAVIGATOR_MODAL_STACK, {
-			screen: MODAL_SCREENS.PERMISSION_SCREEN,
-			params: {
-				permissionType: "camera",
-			},
-		});
+	const handleCameraPermissionTest = async () => {
+		const permission = await getCameraPermission();
+
+		if (permission === "granted") {
+			Alert.alert(
+				"Permission Granted",
+				"You have already granted camera permission"
+			);
+		} else {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_SCREEN,
+				params: {
+					permissionType: "camera",
+				},
+			});
+		}
 	};
 
-	const handleGalleryPermissionTest = () => {
-		navigation.navigate(NAVIGATOR_MODAL_STACK, {
-			screen: MODAL_SCREENS.PERMISSION_SCREEN,
-			params: {
-				permissionType: "gallery",
-			},
-		});
+	const handleGalleryPermissionTest = async () => {
+		const permission = await getGalleryPermission();
+
+		if (permission === "granted") {
+			Alert.alert(
+				"Permission Granted",
+				"You have already granted gallery permission"
+			);
+		} else {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_SCREEN,
+				params: {
+					permissionType: "gallery",
+				},
+			});
+		}
 	};
 
 	return (

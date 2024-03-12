@@ -28,6 +28,7 @@ const SignUpScreen = () => {
 						style={{width: "80%"}}
 						autoPlay
 						loop
+						resizeMode="cover"
 					/>
 					<Text className="text-blue-700 text-xl">
 						Excited To Have You Onboard!

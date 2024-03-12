@@ -1,16 +1,11 @@
-import React, {useMemo} from "react";
+import React from "react";
 import {ScrollView, Text, View} from "react-native";
 
-import {useRoute} from "@react-navigation/native";
+import {useNavigation, useRoute} from "@react-navigation/native";
 import LottieView from "lottie-react-native";
 
-import CameraAnimation from "@assets/lottie/cameraAnimation.json";
-import GalleryAnimation from "@assets/lottie/galleryAnimation.json";
-import LandingAnimation from "@assets/lottie/landingAnimation.json";
-import LocationAnimation from "@assets/lottie/locationPermissionAnimation.json";
-import MicrophoneAnimation from "@assets/lottie/microphoneAnimation.json";
-import NotificationAnimation from "@assets/lottie/notificationAnimation.json";
 import Button from "@components/common/Button";
+import usePermissions from "@hooks/usePermissions";
 
 interface RouteParams {
 	permissionType:
@@ -26,58 +21,20 @@ const PermissionScreen = () => {
 
 	const {permissionType} = route.params as RouteParams;
 
-	const properties = useMemo(() => {
-		switch (permissionType) {
-			case "location":
-				return {
-					permissionAnimation: LocationAnimation,
-					permissionTitle: "Enable Location Permission",
-					permissionDescription:
-						"Please grant location permission to continue using the app features. We promise to keep your location private and secure.",
-					buttonLabel: "Enable Location Permission",
-				};
-			case "notifications":
-				return {
-					permissionAnimation: NotificationAnimation,
-					permissionTitle: "Enable Notifications",
-					permissionDescription:
-						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
-					buttonLabel: "Enable Notifications",
-				};
-			case "microphone":
-				return {
-					permissionAnimation: MicrophoneAnimation,
-					permissionTitle: "Enable Microphone",
-					permissionDescription:
-						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
-					buttonLabel: "Enable Microphone",
-				};
-			case "camera":
-				return {
-					permissionAnimation: CameraAnimation,
-					permissionTitle: "Enable Camera",
-					permissionDescription:
-						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
-					buttonLabel: "Enable Camera",
-				};
-			case "gallery":
-				return {
-					permissionAnimation: GalleryAnimation,
-					permissionTitle: "Enable Gallery",
-					permissionDescription:
-						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
-					buttonLabel: "Enable Gallery",
-				};
-			default:
-				return {
-					permissionAnimation: LandingAnimation,
-					permissionTitle: "Permission",
-					permissionDescription:
-						"Please grant permission to continue",
-					buttonLabel: "Enable Permission",
-				};
+	const {getPermissionScreenProperties} = usePermissions();
+
+	const navigation = useNavigation();
+
+	const properties = getPermissionScreenProperties(permissionType);
+
+	const handleButtonPress = async () => {
+		if (properties.buttonAction) {
+			await properties.buttonAction();
+			navigation.goBack();
+		} else {
+			navigation.goBack();
 		}
-	}, [permissionType]);
+	};
 
 	return (
 		<ScrollView
@@ -90,6 +47,7 @@ const PermissionScreen = () => {
 					style={{width: "70%"}}
 					autoPlay
 					loop
+					resizeMode="cover"
 				/>
 				<Text className="text-4xl text-blue-600 text-center font-extrabold uppercase">
 					{properties.permissionTitle}
@@ -100,7 +58,7 @@ const PermissionScreen = () => {
 				</Text>
 				<View className="h-10" />
 				<Button
-					onPress={() => {}}
+					onPress={handleButtonPress}
 					buttonHeight="h-16"
 					label={properties.buttonLabel}
 				/>
