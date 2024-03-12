@@ -49,6 +49,7 @@ const HomeStack = () => {
 				name={HOME_SCREENS.PROFILE_SCREEN}
 				component={ProfileScreen}
 				options={{
+					headerShown: false,
 					tabBarLabel: "Profile",
 					tabBarIcon: ProfileIcon,
 				}}

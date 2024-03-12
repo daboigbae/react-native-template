@@ -47,7 +47,7 @@ const PermissionScreen = () => {
 			case "microphone":
 				return {
 					permissionAnimation: MicrophoneAnimation,
-					permissionTitle: "Enable Microphone Permission",
+					permissionTitle: "Enable Microphone",
 					permissionDescription:
 						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
 					buttonLabel: "Enable Microphone",
@@ -55,7 +55,7 @@ const PermissionScreen = () => {
 			case "camera":
 				return {
 					permissionAnimation: CameraAnimation,
-					permissionTitle: "Enable Camera Permission",
+					permissionTitle: "Enable Camera",
 					permissionDescription:
 						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
 					buttonLabel: "Enable Camera",
@@ -63,7 +63,7 @@ const PermissionScreen = () => {
 			case "gallery":
 				return {
 					permissionAnimation: GalleryAnimation,
-					permissionTitle: "Enable Gallery Permission",
+					permissionTitle: "Enable Gallery",
 					permissionDescription:
 						"Please grant notification permission to continue using the app features. We promise to keep your notifications private and secure.",
 					buttonLabel: "Enable Gallery",
