@@ -15,15 +15,16 @@ import {
 	NAVIGATOR_MODAL_STACK,
 } from "@utils/screens";
 
+const {
+	getLocationPermission,
+	getNotificationsPermission,
+	getCameraPermission,
+	getGalleryPermission,
+	getMicrophonePermission,
+} = usePermissions();
+
 const ProfileScreen = () => {
 	const navigation = useNavigation<StackNavigationProp<NavigationParams>>();
-	const {
-		getCameraPermission,
-		getGalleryPermission,
-		getMicrophonePermission,
-		getNotificationsPermission,
-		getLocationPermission,
-	} = usePermissions();
 
 	const handleSignOut = () => {
 		navigation.replace(NAVIGATOR_LANDING);

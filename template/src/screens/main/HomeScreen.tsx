@@ -25,8 +25,8 @@ const HomeScreen = () => {
 	const getExampleData = async () => {
 		const results = await get();
 		setData(results[0]);
-	};
 
+	};
 	return (
 		<AwareView backgroundColor="bg-white">
 			<ScrollView
