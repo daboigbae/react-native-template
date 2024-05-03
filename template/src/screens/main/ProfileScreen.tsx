@@ -15,27 +15,35 @@ import {
 	NAVIGATOR_MODAL_STACK,
 } from "@utils/screens";
 
+const {
+	getLocationPermission,
+	getNotificationsPermission,
+	getCameraPermission,
+	getGalleryPermission,
+	getMicrophonePermission,
+} = usePermissions();
+
 const ProfileScreen = () => {
 	const navigation = useNavigation<StackNavigationProp<NavigationParams>>();
-	const {
-		getCameraPermission,
-		getGalleryPermission,
-		getMicrophonePermission,
-		getNotificationsPermission,
-		getLocationPermission,
-	} = usePermissions();
 
 	const handleSignOut = () => {
 		navigation.replace(NAVIGATOR_LANDING);
 	};
 
-	const handleLocationPermissionTest = async() => {
+	const handleLocationPermissionTest = async () => {
 		const permission = await getLocationPermission();
 		if (permission === "granted") {
 			Alert.alert(
 				"Permission Granted",
 				"You have already granted location permission"
 			);
+		} else if (permission === "blocked") {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_DENIED_SCREEN,
+				params: {
+					permissionType: "location",
+				},
+			});
 		} else {
 			navigation.navigate(NAVIGATOR_MODAL_STACK, {
 				screen: MODAL_SCREENS.PERMISSION_SCREEN,
@@ -54,6 +62,13 @@ const ProfileScreen = () => {
 				"Permission Granted",
 				"You have already granted notification permission"
 			);
+		} else if (permission === "blocked") {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_DENIED_SCREEN,
+				params: {
+					permissionType: "notifications",
+				},
+			});
 		} else {
 			navigation.navigate(NAVIGATOR_MODAL_STACK, {
 				screen: MODAL_SCREENS.PERMISSION_SCREEN,
@@ -70,6 +85,13 @@ const ProfileScreen = () => {
 				"Permission Granted",
 				"You have already granted microphone permission"
 			);
+		} else if (permission === "blocked") {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_DENIED_SCREEN,
+				params: {
+					permissionType: "microphone",
+				},
+			});
 		} else {
 			navigation.navigate(NAVIGATOR_MODAL_STACK, {
 				screen: MODAL_SCREENS.PERMISSION_SCREEN,
@@ -88,6 +110,13 @@ const ProfileScreen = () => {
 				"Permission Granted",
 				"You have already granted camera permission"
 			);
+		} else if (permission === "blocked") {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_DENIED_SCREEN,
+				params: {
+					permissionType: "camera",
+				},
+			});
 		} else {
 			navigation.navigate(NAVIGATOR_MODAL_STACK, {
 				screen: MODAL_SCREENS.PERMISSION_SCREEN,
@@ -106,6 +135,13 @@ const ProfileScreen = () => {
 				"Permission Granted",
 				"You have already granted gallery permission"
 			);
+		} else if (permission === "blocked") {
+			navigation.navigate(NAVIGATOR_MODAL_STACK, {
+				screen: MODAL_SCREENS.PERMISSION_DENIED_SCREEN,
+				params: {
+					permissionType: "gallery",
+				},
+			});
 		} else {
 			navigation.navigate(NAVIGATOR_MODAL_STACK, {
 				screen: MODAL_SCREENS.PERMISSION_SCREEN,

@@ -18,4 +18,5 @@ export const SIGNED_OUT_SCREENS = {
 
 export const MODAL_SCREENS = {
 	PERMISSION_SCREEN: "Permission",
+	PERMISSION_DENIED_SCREEN: "Permission Denied",
 } as const;
