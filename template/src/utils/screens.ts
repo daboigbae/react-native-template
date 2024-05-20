@@ -2,8 +2,9 @@ export const NAVIGATOR_BOTTOM_TAB = "Bottom Tab" as const;
 export const NAVIGATOR_LANDING = "Landing Stack" as const;
 export const NAVIGATOR_SIGNED_IN_STACK = "Signed In Stack" as const;
 export const NAVIGATOR_SIGNED_OUT_STACK = "Signed Out Stack" as const;
-export const NAVIGATOR_HOME_STACK = "Home Stack" as const;
-export const NAVIGATOR_MODAL_STACK = "Modal Stack" as const;
+export const NAVIGATOR_HOME_STACK = "Home" as const;
+export const NAVIGATOR_MODAL_STACK = "Modal" as const;
+export const NAVIGATOR_DRAWER_STACK = "Drawer" as const;
 
 export const HOME_SCREENS = {
 	MAIN_SCREEN: "Main",

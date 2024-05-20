@@ -2,9 +2,9 @@ import React from "react";
 
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
-import {NAVIGATOR_HOME_STACK} from "@utils/screens";
+import {NAVIGATOR_DRAWER_STACK, NAVIGATOR_HOME_STACK} from "@utils/screens";
 
-import HomeStack from "./HomeStack";
+import DrawerStack from "./DrawerStack";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,7 +19,7 @@ export type SignedInStackParams = {
 const SignedInStack = () => {
 	return (
 		<Stack.Navigator screenOptions={NAVIGATION_OPTIONS}>
-			<Stack.Screen name={NAVIGATOR_HOME_STACK} component={HomeStack} />
+			<Stack.Screen name={NAVIGATOR_DRAWER_STACK} component={DrawerStack} />
 		</Stack.Navigator>
 	);
 };

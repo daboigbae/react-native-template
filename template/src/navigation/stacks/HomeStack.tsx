@@ -4,7 +4,6 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "@screens/main/HomeScreen";
-import ProfileScreen from "@screens/main/ProfileScreen";
 import {HOME_SCREENS} from "@utils/screens";
 
 const Tab = createBottomTabNavigator();
@@ -25,9 +24,6 @@ const HomeIcon: React.FC<HomeIconProps> = ({color, size}) => (
 	<Icon name="home" color={color} size={size} />
 );
 
-const ProfileIcon: React.FC<HomeIconProps> = ({color, size}) => (
-	<Icon name="person" color={color} size={size} />
-);
 
 export type HomeStackParams = {
 	[HOME_SCREENS.MAIN_SCREEN]: undefined;
@@ -43,15 +39,6 @@ const HomeStack = () => {
 				options={{
 					tabBarLabel: "Home",
 					tabBarIcon: HomeIcon,
-				}}
-			/>
-			<Tab.Screen
-				name={HOME_SCREENS.PROFILE_SCREEN}
-				component={ProfileScreen}
-				options={{
-					headerShown: false,
-					tabBarLabel: "Profile",
-					tabBarIcon: ProfileIcon,
 				}}
 			/>
 		</Tab.Navigator>
