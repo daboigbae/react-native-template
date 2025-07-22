@@ -1,6 +1,9 @@
 # 📱`React Native Template`
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/30089055/199875237-07f734d0-4f60-4f9c-a66e-2e82a33aa410.png" width="100%" />
+  <a href="https://buymeacoffee.com/ghigaredr" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
 </p>
 
 This template creates an empty `react-native` project with every package needed to build a basic scalable mobile app. From bottom-navigation to lottie integration and TailWindCSS support. Sponsored by `Digital Art Dealers`
@@ -49,20 +52,11 @@ If your android app runs, but it can't connect to the react native server
 3. Run `yarn start`
 4. Run `yarn android` 
 
-# 📷Screenshots
-<p align="center">
-<img src="https://github.com/daboigbae/images/blob/main/IMG_9271.PNG" width="90%" />
-</p>
 # 🚧 Projects built with this Template
-
-- [123 Help App](https://123helpapp.com/)
-
-- [YourTales App](https://apps.apple.com/us/app/your-tales-ai-bedtime-stories/id6449475188)
-
-- [Bingo](https://digitalartdealers.net/bingo/)
-
-- [Trade School](https://www.tradeschoolinc.com/)
-
+<a href=""><img src="https://github.com/daboigbae/images/blob/main/qa_banner.jpg" width="90%" /></a>
+<a href="https://digitalartdealers.net/blog/helping-students-with-the-brand-new-tradeschool-mobile-app/"><img src="https://github.com/daboigbae/images/blob/main/tradeschool_banner.jpg" width="90%" /></a>
+<a href="https://digitalartdealers.net/blog/portfolio-005/"><img src="https://github.com/daboigbae/images/blob/main/olympus_banner.jpg" width="90%" /></a>
+<a href=""><img src="https://github.com/daboigbae/images/blob/main/mantra_banner.jpg" width="90%" /></a>
 
 # 🙏 Support
 We all need support and motivation. Please give this project a ⭐️ to encourage and show that you liked it. Don't forget to leave a star ⭐️ before you move away.
