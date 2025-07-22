@@ -43,10 +43,10 @@ const SignInScreen = () => {
 				<View className="bg-transparent h-full w-full justify-center items-center px-4 pt-24">
 					<LottieView
 						source={LandingAnimation}
-						style={{width: "80%"}}
+						style={{width: "100%", height: 156}}
 						autoPlay
 						loop
-						resizeMode="cover"
+						resizeMode="contain"
 					/>
 					<View className="h-3" />
 					<Text className="text-blue-600 text-xl">Welcome Back!</Text>

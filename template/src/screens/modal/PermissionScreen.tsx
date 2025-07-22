@@ -44,10 +44,10 @@ const PermissionScreen = () => {
 			<View className="h-full w-full items-center bg-white px-4">
 				<LottieView
 					source={properties.permissionAnimation}
-					style={{width: "70%"}}
+					style={{width: "70%", height: 256}}
 					autoPlay
 					loop
-					resizeMode="cover"
+					resizeMode="contain"
 				/>
 				<Text className="text-4xl text-blue-600 text-center font-extrabold uppercase">
 					{properties.permissionTitle}

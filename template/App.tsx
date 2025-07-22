@@ -7,7 +7,7 @@ import {PersistGate} from "redux-persist/integration/react";
 
 import useLocalize from "./src/hooks/useLocalize";
 import Navigation from "./src/navigation/Navigation";
-import store from "./src/redux/store"; 
+import store from "./src/redux/store";
 
 import "react-native-gesture-handler";
 

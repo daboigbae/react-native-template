@@ -33,10 +33,10 @@ const ForgotPasswordScreen = () => {
 				<View className="bg-transparent h-full w-full justify-start items-center px-4 pt-24">
 					<LottieView
 						source={LandingAnimation}
-						style={{width: "80%"}}
+						style={{width: "80%", height: 156}}
 						autoPlay
 						loop
-						resizeMode="cover"
+						resizeMode="contain"
 					/>
 					<Text className="text-blue-700 text-xl">
 						Forgot Your Password ?

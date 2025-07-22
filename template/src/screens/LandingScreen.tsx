@@ -22,7 +22,7 @@ const LandingScreen: React.FC<Props> = ({navigation}) => {
 		<View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
 			<LottieView
 				source={LandingAnimation}
-				style={{width: "70%"}}
+				style={{width: "70%", height: 156}}
 				autoPlay
 				loop
 				resizeMode="cover"

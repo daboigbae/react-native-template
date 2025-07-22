@@ -1,4 +1,4 @@
-{
+module.exports = {
 	"tabWidth": 4,
 	"useTabs": true,
 	"doubleQuote": true,
@@ -7,5 +7,5 @@
 	"bracketSameLine": true,
 	"bracketSpacing": false,
 	"semi": true,
-	"trailingComma": "es5"
-}
+	"trailingComma": "es5",
+};
