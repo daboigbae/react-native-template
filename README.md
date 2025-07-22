@@ -10,7 +10,7 @@ This template creates an empty `react-native` project with every package needed 
 
 # 💻 Using Template 
 Run this command to create a new project with the template
-`npx react-native init {YOUR_APP_NAME} --template https://github.com/daboigbae/react-native-template`
+`npx @react-native-community/cli init {YOUR_APP_NAME} --version 0.78.0  --template https://github.com/daboigbae/react-native-template`
 
 ** Make sure to replace {YOUR_APP_NAME} with the name you want to give your project
 
