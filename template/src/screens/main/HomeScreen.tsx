@@ -1,76 +1,157 @@
-import React, {useState} from "react";
-import {ScrollView, Text, View} from "react-native";
+import { HStack, Text, VStack } from '@gluestack-ui/themed';
+import React from 'react';
+import { ScrollView, StatusBar, View } from 'react-native';
+// @ts-ignore
+import { useTranslation } from 'react-i18next';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useTheme } from '../../contexts/ThemeContext';
+import { useThemeColors, useThemeHexColors, useThemeTextColors } from '../../hooks/useThemeColors';
 
-import moment from "moment";
+export const HomeScreen: React.FC = () => {
+  const { t } = useTranslation();
+  const { isDark } = useTheme();
+  const colors = useThemeColors();
+  const textColors = useThemeTextColors();
+  const hexColors = useThemeHexColors();
+  const FeatureCard = ({
+    icon,
+    title,
+    description,
+  }: {
+    icon: string;
+    title: string;
+    description: string;
+  }) => (
+    <View className={`${colors.surface} rounded-2xl p-6 shadow-lg  border-light-secondary mb-4`}>
+      <HStack className='items-start'>
+        <View
+          className={`w-12 h-12 ${colors.accent} rounded-xl items-center justify-center mr-4 mt-1 mb-3`}
+        >
+          <Icon name={icon} size={24} color={hexColors.primary} />
+        </View>
+        <VStack className='flex-1'>
+          <Text className={`text-lg font-semibold ${textColors.primary} mb-2`}>{title}</Text>
+          <Text className={`text-sm ${textColors.secondary} leading-5`}>{description}</Text>
+        </VStack>
+      </HStack>
+    </View>
+  );
 
-import Avatar from "@components/common/Avatar";
-import AwareView from "@components/common/AwareView";
-import Button from "@components/common/Button";
-import TextInput from "@components/common/TextInput";
-import useExample from "@hooks/useExample";
+  return (
+    <>
+      <StatusBar
+        barStyle={isDark ? 'light-content' : 'dark-content'}
+        backgroundColor={hexColors.background}
+      />
+      <ScrollView
+        className={`flex-1 ${colors.background}`}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 20 }}
+      >
+        <View className='px-6 pt-6 pb-8'>
+          {/* Header */}
+          <VStack className='items-center mb-8'>
+            <View
+              className={`w-16 h-16 ${colors.primary} rounded-2xl items-center justify-center mb-4`}
+            >
+              <Icon name='rocket-launch' size={32} color='white' />
+            </View>
+            <Text className={`text-3xl font-bold ${textColors.primary} mb-2`}>
+              {t('home.title')}
+            </Text>
+            <Text className={`text-base ${textColors.secondary} text-center max-w-xs`}>
+              {t('home.subtitle')}
+            </Text>
+          </VStack>
 
-// For example purposes. Replace with your own data structure or remove if not needed
-interface DataProps {
-	attributes: {
-		body: string;
-	};
-}
+          {/* Welcome Section */}
+          <View className={`${colors.primary} rounded-2xl p-6 mb-6`}>
+            <VStack className='items-center'>
+              <Text className='text-white text-xl font-bold mb-2'>{t('home.welcome')}</Text>
+              <Text className='text-white/90 text-center leading-5'>
+                {t('home.welcomeMessage')}
+              </Text>
+            </VStack>
+          </View>
 
-const HomeScreen = () => {
-	const {get, isLoading} = useExample();
+          {/* Features Section */}
+          <VStack className='mb-6'>
+            <Text className={`text-xl font-bold ${textColors.primary} mb-4`}>
+              {t('home.whatsIncluded')}
+            </Text>
 
-	const [data, setData] = useState<DataProps | null>(null);
-	const [name, setName] = useState("");
+            <FeatureCard
+              icon='security'
+              title={t('home.features.authentication.title')}
+              description={t('home.features.authentication.description')}
+            />
 
-	const getExampleData = async () => {
-		const results = await get();
-		setData(results[0]);
+            <FeatureCard
+              icon='navigation'
+              title={t('home.features.navigation.title')}
+              description={t('home.features.navigation.description')}
+            />
 
-	};
-	return (
-		<AwareView backgroundColor="bg-white">
-			<ScrollView
-				contentContainerStyle={{flexGrow: 1, paddingBottom: "15%"}}
-				className="w-full bg-white h-full">
-				<View className=" h-full w-full justify-center px-4">
-					<View className="self-center">
-						<Avatar
-							image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAF3jvkhiHrC4W-Vu9J_0A1kvni4C5qZrj1w&usqp=CAU"
-							username="Manbeartrain"
-							size={100}
-						/>
-					</View>
-					<Text className="text-2xl font-bold text-center mt-8">
-						Todays Date
-					</Text>
-					<Text className="text-center text-lg">
-						{moment(new Date()).format("YYYY-MM-DD")}
-					</Text>
+            <FeatureCard
+              icon='palette'
+              title={t('home.features.ui.title')}
+              description={t('home.features.ui.description')}
+            />
 
-					<Button
-						buttonStyle="w-full bg-blue-600 h-12 rounded-lg justify-center items-center"
-						onPress={getExampleData}
-						label="Get Example Data"
-						isLoading={isLoading}
-						isDisabled={isLoading}
-					/>
-					{data && (
-						<Text className="text-center mt-4">
-							{`Example Data: ${data.attributes.body}`}
-						</Text>
-					)}
-					<View className="h-8" />
-					<TextInput
-						type="password"
-						placeholder="Enter your name..."
-						label="Name"
-						onChangeText={setName}
-						value={name}
-					/>
-				</View>
-			</ScrollView>
-		</AwareView>
-	);
+            <FeatureCard
+              icon='settings'
+              title={t('home.features.permissions.title')}
+              description={t('home.features.permissions.description')}
+            />
+
+            <FeatureCard
+              icon='phone-android'
+              title={t('home.features.crossPlatform.title')}
+              description={t('home.features.crossPlatform.description')}
+            />
+
+            <FeatureCard
+              icon='code'
+              title={t('home.features.typescript.title')}
+              description={t('home.features.typescript.description')}
+            />
+          </VStack>
+
+          {/* Getting Started Section */}
+          <View className={`${colors.surface} rounded-xl p-6  border-light-secondary mb-6`}>
+            <HStack className='items-start'>
+              <View className='mr-3 mt-0.5'>
+                <Icon name='lightbulb' size={20} color={hexColors.secondary} />
+              </View>
+              <VStack className='flex-1'>
+                <Text className={`text-sm font-medium ${textColors.primary} mb-2`}>
+                  {t('home.gettingStarted')}
+                </Text>
+                <Text className={`text-sm ${textColors.secondary} leading-5`}>
+                  {t('home.gettingStartedText')}
+                </Text>
+              </VStack>
+            </HStack>
+          </View>
+
+          {/* Template Info */}
+          <View className={`${colors.surface} rounded-xl p-6`}>
+            <HStack className='items-start'>
+              <View className='mr-3 mt-0.5'>
+                <Icon name='info' size={20} color={hexColors.textSecondary} />
+              </View>
+              <VStack className='flex-1'>
+                <Text className={`text-sm font-medium ${textColors.primary} mb-2`}>
+                  {t('home.templateInfo')}
+                </Text>
+                <Text className={`text-sm ${textColors.secondary} leading-5`}>
+                  {t('home.templateInfoText')}
+                </Text>
+              </VStack>
+            </HStack>
+          </View>
+        </View>
+      </ScrollView>
+    </>
+  );
 };
-
-export default HomeScreen;
