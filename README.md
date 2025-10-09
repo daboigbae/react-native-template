@@ -53,7 +53,8 @@ If your android app runs, but it can't connect to the react native server
 4. Run `yarn android` 
 
 # 🚧 Projects built with this Template
-<a href=""><img src="https://github.com/daboigbae/images/blob/main/qa_banner.jpg" width="90%" /></a>
+<a href="https://bowlingalleys.io/"><img src="https://github.com/daboigbae/images/blob/main/ChatGPT%20Image%20Oct%209%2C%202025%2C%2008_41_38%20AM.png" width="90%" /></a>
+<a href="http://quickauction.com/"><img src="https://github.com/daboigbae/images/blob/main/qa_banner.jpg" width="90%" /></a>
 <a href="https://digitalartdealers.net/blog/helping-students-with-the-brand-new-tradeschool-mobile-app/"><img src="https://github.com/daboigbae/images/blob/main/tradeschool_banner.jpg" width="90%" /></a>
 <a href="https://digitalartdealers.net/blog/portfolio-005/"><img src="https://github.com/daboigbae/images/blob/main/olympus_banner.jpg" width="90%" /></a>
 <a href=""><img src="https://github.com/daboigbae/images/blob/main/mantra_banner.jpg" width="90%" /></a>
