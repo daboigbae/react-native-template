@@ -39,7 +39,7 @@ Take the following steps to run the application locally for iOS
 3. run `yarn ios` at root
 
 #### 📱Android 
-Take the following steps to run the application locally for iOS
+Take the following steps to run the application locally for Android
 1. run `yarn install`
 2. run `yarn android`
 
