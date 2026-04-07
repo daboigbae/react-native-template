@@ -1,0 +1,10 @@
+appId: com.digitalartdealers.template
+---
+- launchApp
+- assertVisible: "Welcome back"
+- tapOn: "Email"
+- inputText: "demo@digitalartdealers.com"
+- tapOn: "Password"
+- inputText: "password123"
+- tapOn: "Sign in"
+- assertVisible: "Posts"

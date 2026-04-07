@@ -1,0 +1,15 @@
+{
+  "auth": {
+    "signIn": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to continue.",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in"
+    }
+  },
+  "tabs": {
+    "home": "Home",
+    "profile": "Profile"
+  }
+}
