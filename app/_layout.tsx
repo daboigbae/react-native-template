@@ -31,6 +31,7 @@ export default function RootLayout() {
               contentStyle: { backgroundColor: scheme === 'dark' ? '#0B0B0F' : '#FFFFFF' },
             }}
           >
+            <Stack.Screen name="index" />
             <Stack.Screen name="(tabs)" />
             <Stack.Screen name="(auth)" />
             <Stack.Screen name="post/[id]" options={{ headerShown: true, title: 'Post' }} />
