@@ -18,6 +18,14 @@ android/
 npm-debug.*
 yarn-debug.*
 yarn-error.*
+package-lock.json
+
+# Yarn Berry cache (not committed — use yarn.lock only)
+.yarn/cache
+.yarn/install-state.gz
+.yarn/build-state.yml
+.yarn/unplugged
+.pnp.*
 
 # Testing
 coverage/
